@@ -1,4 +1,4 @@
-require 'pry'
+
 class TrendingStocks::CLI
 
     def call

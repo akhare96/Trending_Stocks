@@ -1,0 +1,4 @@
+class TrendingStocks::Scraper
+
+
+end

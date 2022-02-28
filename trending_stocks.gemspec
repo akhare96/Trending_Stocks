@@ -11,15 +11,15 @@ Gem::Specification.new do |spec|
   spec.summary       = "Finds the 20 most talked about stocks on tiwtter and displays details on the selected stock"
   spec.description   = "Finformer.com keeps track of the 20 most talked about stocks on twitter.  This gem scrapes that list at time of execution and proceeds to display the stocks.
                         the user can either compare two stocks or select a stock for further details/news (scraped from yahoo finance)."
-  spec.homepage      = "www.bob.com"
+  #spec.homepage      = "www.bob.com"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.4.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "www.bob.com"
-  spec.metadata["changelog_uri"] = "www.bob.com"
+  #spec.metadata["homepage_uri"] = spec.homepage
+  #spec.metadata["source_code_uri"] = "www.bob.com"
+  #spec.metadata["changelog_uri"] = "www.bob.com"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -33,10 +33,11 @@ Gem::Specification.new do |spec|
 
   # spec.add_dependency "example-gem", "~> 1.0"
 
-  add_development_dependency "bundler"
+  spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "nokogiri"
   spec.add_development_dependency "pry"
+  spec.add_development_dependency "open-uri"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
