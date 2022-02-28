@@ -2,7 +2,6 @@ require 'pry'
 class TrendingStocks::CLI
 
     def call
-        puts "welcome to eden"
-        binding.pry
+        puts "welcome to Trending Stocks"
     end
 end
