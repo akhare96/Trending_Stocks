@@ -1,6 +1,8 @@
+require 'pry'
 class TrendingStocks::Scraper
 
     def self.trending_stocks_scraper
+        binding.pry
         trending = Nokogiri::HTML(open("https://www.finder.com/reddit-stocks-to-buy"))
         trending.css("tbody.luna-table__body tr")[0..24].each {|stock|
             ticker = stock.css("td.text-xx-large").text
@@ -55,9 +57,23 @@ class TrendingStocks::Scraper
     end
 
     def self.stock_analyst_scraper(selected_stock)
+        
         stock_site = Nokogiri::HTML(open("https://finviz.com/quote.ashx?t=#{selected_stock.ticker}"))
         a = stock_site.css("table.fullview-ratings-outer").text
         analysts = a.gsub((/(?<=[\d])(?=[A-Z])/), '  ')
         TrendingStocks::Stock_ratings.new(analysts)
     end
+
+    def self.stock_news_scraper(selected_stock)
+        stock_site = Nokogiri::HTML(open("https://finviz.com/quote.ashx?t=#{selected_stock.ticker}"))
+        stock_site.css("table.fullview-news-outer tr")[0..19].each {|news|
+            title = news.css("td div.news-link-left").text
+            time = news.css("td").text
+            url = doc.css("div.news-link-left a").attribute("href").value
+            TrendingStocks::Stock_news.new(title, time, url)
+        }
+    end
+    https://finviz.com/quote.ashx?t=TSLA&ty=c&ta=1&p=d
+
+
 end
