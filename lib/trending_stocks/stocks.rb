@@ -17,4 +17,8 @@ class TrendingStocks::Stocks
         @@all
     end
 
+    def self.create_stocks_list
+        TrendingStocks::Scraper.trending_stocks_scraper
+    end
+
 end
