@@ -9,5 +9,12 @@ class TrendingStocks::Scraper
         }
     end
 
+    def self.stock_details_scraper(selected_stock)
+        stock_site = Nokogiri::HTML(open("https://finviz.com/quote.ashx?t=#{selected_stock.ticker}"))
+        stock_details_hash = {}
+        
+    end
+
+
 
 end
