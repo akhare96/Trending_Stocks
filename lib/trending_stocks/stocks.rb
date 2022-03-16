@@ -7,5 +7,14 @@ class TrendingStocks::Stocks
     def initialize(ticker, full_name)
         @ticker = ticker
         @full_name = full_name
+        save
     end
+
+    def save
+        self.class.all << self
+
+    def self.all
+        @@all
+    end
+
 end
