@@ -54,6 +54,10 @@ class TrendingStocks::Scraper
         TrendingStocks::Details.new(stock_details_hash)
     end
 
-
-
+    def self.stock_analyst_scraper(selected_stock)
+        stock_site = Nokogiri::HTML(open("https://finviz.com/quote.ashx?t=#{selected_stock.ticker}"))
+        a = stock_site.css("table.fullview-ratings-outer").text
+        analysts = a.gsub((/(?<=[\d])(?=[A-Z])/), '  ')
+        TrendingStocks::Stock_ratings.new(analysts)
+    end
 end
