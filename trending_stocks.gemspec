@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ambar Khare"]
   spec.email         = ["ambar.khare24@gmail.com"]
 
-  spec.summary       = "Finds the 20 most talked about stocks on tiwtter and displays details on the selected stock"
-  spec.description   = "Finformer.com keeps track of the 20 most talked about stocks on twitter.  This gem scrapes that list at time of execution and proceeds to display the stocks.
-                        the user can either compare two stocks or select a stock for further details/news (scraped from yahoo finance)."
+  spec.summary       = "Finds the 25 most talked about stocks on reddit and displays details on the selected stock"
+  spec.description   = "finder.com/reddit-stocks-to-buy keeps track of the most talked about stocks on twitter.  This gem scrapes that list at time of execution and proceeds to display the stocks.
+                        The user can select a stock to see more details along with analyst ratings and 20 lates news headlines."
   #spec.homepage      = "www.bob.com"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.4.0"
@@ -38,6 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "nokogiri"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "open-uri"
+  spec.add_development_dependency "terminal-table"
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
