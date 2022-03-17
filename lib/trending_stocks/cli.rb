@@ -3,9 +3,14 @@ class TrendingStocks::CLI
 
 
     def call
-        puts "Welcome to Trending Stocks! Here are the top 25 trending stocks on reddit for the past 24 hours:"
+
+        @input = ""
+
+        puts "Welcome to Trending Stocks! Here are the top 25 trending stocks on reddit for the past 24 hours.  The current time is #{Time.now}."
         TrendingStocks::Stocks.create_stocks_list
-        binding.pry
+        TrendingStocks::Stocks.display_stocks_list
+        puts "Which stock would you like to see more details of? Please enter a number from 1-25"
+        
     end
 /
     welcomes user
