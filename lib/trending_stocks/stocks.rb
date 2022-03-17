@@ -21,4 +21,15 @@ class TrendingStocks::Stocks
         TrendingStocks::Scraper.trending_stocks_scraper
     end
 
+    def self.display_stocks_list
+        table = Terminal::Table.new {|t|
+            self.all.each.with_index(1) {|stock, index|
+                t << [index.to_s, stock.ticker, stock.full_name]
+            }
+            t.style = {:all_separators => true}
+            t.title = "Top 25 trending stocks on Reddit"
+        }
+        puts table
+    end
+
 end
