@@ -6,7 +6,7 @@ class TrendingStocks::Stock_ratings
         @ratings = ratings
     end
 
-    def create_stock_ratings(selected_stock)
+    def self.create_stock_ratings(selected_stock)
         analysts = TrendingStocks::Scraper.stock_analyst_scraper(selected_stock)
         selected_stock.ratings = analysts
     end
