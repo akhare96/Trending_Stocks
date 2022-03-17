@@ -23,7 +23,13 @@ class TrendingStocks::CLI
             TrendingStocks::Stock_details.create_stock_details(@selected_stock)
             TrendingStocks::Stock_ratings.create_stock_ratings(@selected_stock)
             TrendingStocks::Stock_news.create_stock_news(@selected_stock)
+        elsif @input == "exit"
+            puts "Thanks for using Trending Stocks! Goodbye."
+        else
+            puts "Please enter a valid number"
+            gets_stock_information
         end
+    end
 
 /
     welcomes user
