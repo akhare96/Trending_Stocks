@@ -11,7 +11,20 @@ class TrendingStocks::CLI
         TrendingStocks::Stocks.display_stocks_list
         puts "Which stock would you like to see more details of? Please enter a number from 1-25"
         
+
     end
+
+    def gets_stock_information
+        @input = gets.strip
+        i = @input.to_i
+        if (1..TrendingStocks::Stocks.all.length).include?(i)
+            i -= 1
+            @selected_stock = TrendingStocks::Stocks.all[i]
+            TrendingStocks::Stock_details.create_stock_details(@selected_stock)
+            TrendingStocks::Stock_ratings.create_stock_ratings(@selected_stock)
+            TrendingStocks::Stock_news.create_stock_news(@selected_stock)
+        end
+
 /
     welcomes user
 
