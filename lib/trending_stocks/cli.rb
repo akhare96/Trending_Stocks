@@ -10,6 +10,8 @@ class TrendingStocks::CLI
         TrendingStocks::Stocks.create_stocks_list
         TrendingStocks::Stocks.display_stocks_list
         puts "Which stock would you like to see more details of? Please enter a number from 1-25"
+        gets_stock_information
+        binding.pry
         
 
     end

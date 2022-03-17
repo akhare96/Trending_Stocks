@@ -7,7 +7,7 @@ class TrendingStocks::Stock_details
         }
     end
 
-    def create_stock_details(selected_stock)
+    def self.create_stock_details(selected_stock)
         deets = TrendingStocks::Scraper.stock_details_scraper(selected_stock)
         selected_stock.details = deets
     end

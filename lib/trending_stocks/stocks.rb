@@ -10,8 +10,9 @@ class TrendingStocks::Stocks
         save
     end
 
-    def self.save
+    def save
         self.class.all << self
+    end
 
     def self.all
         @@all
