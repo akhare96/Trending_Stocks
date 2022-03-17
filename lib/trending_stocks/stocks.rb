@@ -1,6 +1,6 @@
 class TrendingStocks::Stocks
 
-    attr_accessor :ticker, :full_name, :stock_news, :stock_ratings, :stock_details
+    attr_accessor :ticker, :full_name, :news, :ratings, :details
 
     @@all = []
 
@@ -10,7 +10,7 @@ class TrendingStocks::Stocks
         save
     end
 
-    def save
+    def self.save
         self.class.all << self
 
     def self.all
@@ -30,6 +30,10 @@ class TrendingStocks::Stocks
             t.title = "Top 25 trending stocks on Reddit"
         }
         puts table
+    end
+
+    def self.clear_all
+        self.all.clear
     end
 
 end
