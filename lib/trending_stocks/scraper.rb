@@ -69,7 +69,7 @@ class TrendingStocks::Scraper
         stock_site.css("table.fullview-news-outer tr")[0..19].each {|news|
             title = news.css("td div.news-link-left").text
             time = news.css("td")[0].text
-            url = doc.css("div.news-link-left a").attribute("href").value
+            url = stock_site.css("div.news-link-left a").attribute("href").value
             TrendingStocks::Stock_news.new(title, time, url)
         }
     end
