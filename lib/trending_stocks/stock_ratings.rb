@@ -12,7 +12,11 @@ class TrendingStocks::Stock_ratings
     end
 
     def self.display_stock_ratings(user_stock)
-        puts user_stock.ratings.rates
+        if user_stock.ratings.rates == ""
+            puts "There are no analysts ratings for this stock/ETF currently."
+        else
+            puts user_stock.ratings.rates
+        end
     end
 
 end
