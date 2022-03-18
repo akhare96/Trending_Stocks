@@ -65,10 +65,10 @@ class TrendingStocks::Scraper
 
     def self.stock_news_scraper(selected_stock)
         stock_site = Nokogiri::HTML(open("https://finviz.com/quote.ashx?t=#{selected_stock.ticker}"))
-        stock_site.css("table.fullview-news-outer tr")[0..19].each {|news|
+        stock_site.css("table.fullview-news-outer tr")[0..24].each {|news|
             title = news.css("td div.news-link-left").text
             time = news.css("td")[0].text
-            url = stock_site.css("div.news-link-left a").attribute("href").value
+            url = news.css("div.news-link-left a.tab-link-news").attribute("href").value
             TrendingStocks::Stock_news.new(title, time, url)
         }
     end
