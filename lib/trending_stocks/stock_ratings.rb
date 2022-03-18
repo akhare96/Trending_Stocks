@@ -1,9 +1,9 @@
 class TrendingStocks::Stock_ratings
     
-    attr_accessor :ratings
+    attr_accessor :rates
 
-    def initialize(ratings)
-        @ratings = ratings
+    def initialize(rates)
+        @rates = rates
     end
 
     def self.create_stock_ratings(selected_stock)
@@ -12,7 +12,7 @@ class TrendingStocks::Stock_ratings
     end
 
     def self.display_stock_ratings(user_stock)
-        puts user_stock.ratings
+        puts user_stock.ratings.rates
     end
 
 end
