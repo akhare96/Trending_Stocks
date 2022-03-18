@@ -11,4 +11,8 @@ class TrendingStocks::Stock_ratings
         selected_stock.ratings = analysts
     end
 
+    def self.display_stock_ratings(user_stock)
+        puts user_stock.ratings
+    end
+
 end
