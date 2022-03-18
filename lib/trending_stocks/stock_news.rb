@@ -26,8 +26,8 @@ class TrendingStocks::Stock_news
 
     def self.display_stock_news(user_stock)
         table = Terminal::Table.new {|t|
-            TrendingStocks::Stocks.user_stock.news.each {|stock|
-                t << [stock.time, stock.title, stock.url]
+            user_stock.news.each {|stock|
+                t << [stock.time, "#{stock.title}\n#{stock.url}"]
             }
             t.style = {:all_separators => true}
             t.title = "Latest 20 Headlines for #{user_stock.ticker}"
