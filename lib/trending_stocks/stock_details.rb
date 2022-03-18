@@ -16,7 +16,7 @@ class TrendingStocks::Stock_details
         puts "The stock you selected is #{user_stock.ticker} - #{user_stock.full_name}.\n\n"
         puts "||  #{user_stock.details.sector}  ||  #{user_stock.details.industry}  ||  #{user_stock.details.country}  ||\n\n"
         puts "Summary"
-        puts "------\n"
+        puts "-------\n"
         puts "#{user_stock.details.about}\n\n"
 
         table = Terminal::Table.new {|t|
@@ -26,7 +26,7 @@ class TrendingStocks::Stock_details
         t << ["Market Cap", user_stock.details.market_cap, "EPS", user_stock.details.eps, "Quarterly Earnings Growth (YoY)", user_stock.details.ear_growth, "Revenue", user_stock.details.rev, "Quarterly Revenue Growth (YoY)", user_stock.details.rev_growth]
         t << ["P/E", user_stock.details.pe, "Forward P/E", user_stock.details.forward_pe, "Dividend Yield", user_stock.details.div_yield, "Options", user_stock.details.options, "Earnings Date", user_stock.details.ear_date]
         t << ["Insider Ownership", user_stock.details.insider, "Insider Transaction", user_stock.details.insider_trans_6m, "Institution Ownership", user_stock.details.inst_own, "Institution Transaction", user_stock.details.inst_trans_3m, "RSI (14)", user_stock.details.rsi]
-        t << ["SMA20", user_stock.details.sma20, "SMA50", user_stock.details.sma50, "SMA200", user_stock.details.sma200, "Analyst Rate 1-BUY 5-SELL", user_stock.details.recom, "Analyst Target Price", user_stock.details.target]
+        t << ["SMA20", user_stock.details.sma20, "SMA50", user_stock.details.sma50, "SMA200", user_stock.details.sma200, "Analyst Avg Score 1-BUY 5-SELL", user_stock.details.recom, "Analyst Avg Target Price", user_stock.details.target]
         t.style = {:all_separators => true}
         } 
         puts table
