@@ -12,6 +12,7 @@ require 'pry'
 require 'nokogiri'
 require 'open-uri'
 require 'terminal-table'
+require 'colorize'
 
 
 module TrendingStocks
