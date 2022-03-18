@@ -1,6 +1,6 @@
 class TrendingStocks::Stocks
 
-    attr_accessor :ticker, :full_name, :news, :ratings, :details
+    attr_accessor :ticker, :full_name, :ratings, :details, :news
 
     @@all = []
 
