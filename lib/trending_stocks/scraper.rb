@@ -57,10 +57,9 @@ class TrendingStocks::Scraper
     end
 
     def self.stock_analyst_scraper(selected_stock)
-        
         stock_site = Nokogiri::HTML(open("https://finviz.com/quote.ashx?t=#{selected_stock.ticker}"))
         a = stock_site.css("table.fullview-ratings-outer").text
-        analysts = a.gsub((/(?<=[\d])(?=[A-Z])/), '  ')
+        analysts = a.gsub((/(?<=[\d])(?=[A-Z])/), ' -- ').gsub(("\n\n\n\n\n\n\n"), ("\n\n")).gsub(("\n\n\n\n\n\n"), ("\n\n"))
         TrendingStocks::Stock_ratings.new(analysts)
     end
 
