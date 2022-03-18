@@ -28,7 +28,7 @@ class TrendingStocks::Stocks
                 t << [index.to_s, stock.ticker, stock.full_name]
             }
             t.style = {:all_separators => true}
-            t.title = "Top 25 trending stocks on Reddit"
+            t.title = "Top 25 trending stocks on Reddit".colorize(:blue)
         }
         puts table
     end
