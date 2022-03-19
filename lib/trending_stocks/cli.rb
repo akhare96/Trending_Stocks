@@ -6,11 +6,12 @@ class TrendingStocks::CLI
         puts "Welcome to Trending Stocks! Here are the top 25 trending stocks on reddit for the past 24 hours.  The current time is #{Time.now}.  Type #{"exit".colorize(:blue)} anytime during the program to exit."
         TrendingStocks::Stocks.create_stocks_list
         TrendingStocks::Stocks.display_stocks_list
-        puts "Which stock would you like to see more details of? Please enter a number from 1-25"
+        puts "Which stock would you like to see more details of? Please enter a number from #{"1-25".colorize(:blue)}"
         gets_stock_information
-        TrendingStocks::Stock_details.display_stock_details(@selected_stock)
-        puts "For latest news, type #{"news".colorize(:blue)}.  For analysts ratings type #{"ratings".colorize(:blue)}.  If you would like to select another stock type #{"next".colorize(:blue)}."
-        user_choice
+        if !(@input == "exit")
+            puts "For latest news, type #{"news".colorize(:blue)}.  For analysts ratings type #{"ratings".colorize(:blue)}.  If you would like to select another stock type #{"next".colorize(:blue)}."
+            user_choice
+        end
     end
 
     def gets_stock_information
@@ -22,11 +23,12 @@ class TrendingStocks::CLI
             TrendingStocks::Stock_details.create_stock_details(@selected_stock)
             TrendingStocks::Stock_ratings.create_stock_ratings(@selected_stock)
             TrendingStocks::Stock_news.create_stock_news(@selected_stock)
-        elsif
+            TrendingStocks::Stock_details.display_stock_details(@selected_stock)
+        elsif @input == "exit"
+            goodbye
+        else 
             puts "Please enter a valid number"
             gets_stock_information
-        else
-            goodbye
         end
     end
 
