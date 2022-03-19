@@ -48,15 +48,49 @@ class TrendingStocks::CLI
     end
 
     def user_chose_news_first
+        @input = gets.strip
+        if @input == "ratings"
+            TrendingStocks::Stock_ratings.display_stock_ratings(@selected_stock)
+            puts "Type 'next' if you want to select another stock"
+            @input = gets.strip
+            if @input == "next"
+                user_chose_next
+            else
+                goodbye
+            end
+        elsif @input == "next"
+            user_chose_next
+        else
+            goodbye
+        end
     end
 
     def user_chose_ratings_first
+        @input = gets.strip
+        if @input == "news"
+            TrendingStocks::Stock_news.display_stock_news(@selected_stock)
+            puts "Type 'next' if you want to select another stock"
+            @input = gets.strip
+            if @input == "next"
+                user_chose_next
+            else
+                goodbye
+            end
+        elsif @input == "next"
+            user_chose_next
+        else
+            goodbye
+        end
     end
 
     def user_chose_next
+        TrendingStocks::Stocks.clear_all
+        call
     end
 
     def goodbye
+        if @input == "exit"
+            puts "Thanks for using Trending Stocks! Goodbye."
+        end
     end
-
 end
