@@ -3,13 +3,13 @@ class TrendingStocks::CLI
 
     def call
         @input = ""
-        puts "Welcome to Trending Stocks! Here are the top 25 trending stocks on reddit for the past 24 hours.  The current time is #{Time.now}.  Enter 'exit' anytime during the program to exit."
+        puts "Welcome to Trending Stocks! Here are the top 25 trending stocks on reddit for the past 24 hours.  The current time is #{Time.now}.  Type #{"exit".colorize(:blue)} anytime during the program to exit."
         TrendingStocks::Stocks.create_stocks_list
         TrendingStocks::Stocks.display_stocks_list
         puts "Which stock would you like to see more details of? Please enter a number from 1-25"
         gets_stock_information
         TrendingStocks::Stock_details.display_stock_details(@selected_stock)
-        puts "For news, type 'news'.  For analysts ratings type 'ratings'.  If you would like to select another stock type 'next'"
+        puts "For latest news, type #{"news".colorize(:blue)}.  For analysts ratings type #{"ratings".colorize(:blue)}.  If you would like to select another stock type #{"next".colorize(:blue)}."
         user_choice
     end
 
@@ -34,11 +34,11 @@ class TrendingStocks::CLI
         @input = gets.strip
         if @input == "news"
             TrendingStocks::Stock_news.display_stock_news(@selected_stock)
-            puts "If you would like to see ratings type 'ratings' or 'next' to select another stock."
+            puts "If you would like to see ratings type #{"ratings".colorize(:blue)} or #{"next".colorize(:blue)} to select another stock."
             user_chose_news_first
         elsif @input == "ratings"
             TrendingStocks::Stock_ratings.display_stock_ratings(@selected_stock)
-            puts "If you would like to see latest news type 'news' or 'next' to select another stock."
+            puts "If you would like to see latest news type #{"news".colorize(:blue)} or #{"next".colorize(:blue)} to select another stock."
             user_chose_ratings_first
         elsif @input == "next"
             user_chose_next
@@ -51,7 +51,7 @@ class TrendingStocks::CLI
         @input = gets.strip
         if @input == "ratings"
             TrendingStocks::Stock_ratings.display_stock_ratings(@selected_stock)
-            puts "Type 'next' if you want to select another stock"
+            puts "Type #{"next".colorize(:blue)} if you want to select another stock"
             @input = gets.strip
             if @input == "next"
                 user_chose_next
@@ -69,7 +69,7 @@ class TrendingStocks::CLI
         @input = gets.strip
         if @input == "news"
             TrendingStocks::Stock_news.display_stock_news(@selected_stock)
-            puts "Type 'next' if you want to select another stock"
+            puts "Type #{"next".colorize(:blue)} if you want to select another stock"
             @input = gets.strip
             if @input == "next"
                 user_chose_next
