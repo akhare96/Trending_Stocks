@@ -25,7 +25,7 @@ class TrendingStocks::Stocks
     def self.display_stocks_list
         table = Terminal::Table.new {|t|
             self.all.each.with_index(1) {|stock, index|
-                t << [index.to_s, stock.ticker, stock.full_name]
+                t << [index.to_s.colorize(:blue), stock.ticker, stock.full_name]
             }
             t.style = {:all_separators => true}
             t.title = "Top 25 trending stocks on Reddit".colorize(:blue)
