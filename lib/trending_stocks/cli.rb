@@ -29,7 +29,6 @@ class TrendingStocks::CLI
             TrendingStocks::Stock_news.create_stock_news(@selected_stock)
             TrendingStocks::Stock_details.display_stock_details(@selected_stock)
         elsif @input == "exit"
-            #goodbye
         else 
             puts "Please enter a valid input"
             gets_stock_information
