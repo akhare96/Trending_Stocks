@@ -20,7 +20,7 @@ class TrendingStocks::Stock_details
 
     def self.create_stock_details(selected_stock)
         TrendingStocks::Scraper.stock_details_scraper(selected_stock)
-        selected_stock.details = self.all_details
+        selected_stock.details = self.all_details[0]
     end
 
     def self.display_stock_details(user_stock)
