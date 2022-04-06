@@ -6,6 +6,7 @@ class TrendingStocks::Stock_ratings
 
     def initialize(rates)
         @rates = rates
+        save
     end
 
     def save
