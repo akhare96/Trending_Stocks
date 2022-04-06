@@ -33,9 +33,4 @@ class TrendingStocks::Stocks
         puts table
     end
 
-    def self.clear_all_instances
-        self.all.clear
-        TrendingStocks::Stock_news.all_news.clear
-    end
-
 end
