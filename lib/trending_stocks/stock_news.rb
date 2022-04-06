@@ -20,7 +20,7 @@ class TrendingStocks::Stock_news
     end
 
     def self.create_stock_news(selected_stock)
-        latest_news = TrendingStocks::Scraper.stock_news_scraper(selected_stock)
+        TrendingStocks::Scraper.stock_news_scraper(selected_stock)
         selected_stock.news = self.all_news
     end
 
