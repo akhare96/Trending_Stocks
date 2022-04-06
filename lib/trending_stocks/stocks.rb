@@ -35,8 +35,6 @@ class TrendingStocks::Stocks
 
     def self.clear_all_instances
         self.all.clear
-        TrendingStocks::Stock_details.all_details.clear
-        TrendingStocks::Stock_ratings.ratings.clear
         TrendingStocks::Stock_news.all_news.clear
     end
 

@@ -1,26 +1,15 @@
 class TrendingStocks::Stock_details
 
-    @@all_details = []
-
     def initialize(stock_details_hash)
         stock_details_hash.each {|key, value|
             self.class.attr_accessor(key)
             self.send("#{key}=", value)
         }
-        save
-    end
-
-    def save
-        self.class.all_details << self
-    end
-
-    def self.all_details
-        @@all_details
     end
 
     def self.create_stock_details(selected_stock)
-        TrendingStocks::Scraper.stock_details_scraper(selected_stock)
-        selected_stock.details = self.all_details[0]
+        deets = TrendingStocks::Scraper.stock_details_scraper(selected_stock)
+        selected_stock.details = deets
     end
 
     def self.display_stock_details(user_stock)
