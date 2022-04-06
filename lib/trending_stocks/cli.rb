@@ -96,7 +96,7 @@ class TrendingStocks::CLI
     end
 
     def user_chose_next
-        TrendingStocks::Stocks.clear_all
+        TrendingStocks::Stocks.clear_all_instances
         call
     end
 end
