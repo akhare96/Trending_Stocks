@@ -9,7 +9,6 @@ class TrendingStocks::CLI
             puts "For latest news, type #{"news".colorize(:blue)}.  For analysts ratings type #{"ratings".colorize(:blue)}.  If you would like to select another stock type #{"next".colorize(:blue)}."
             user_choice
         end
-        puts "Thanks for using Trending Stocks! Goodbye."
     end
 
     def gets_stocks_list

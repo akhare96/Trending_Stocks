@@ -4,3 +4,4 @@ require_relative '../lib/environment'
 
 puts "Welcome to Trending Stocks! Here are the top 25 trending stocks on reddit for the past 24 hours.  Type #{"exit".colorize(:blue)} anytime during the program to exit."
 TrendingStocks::CLI.new.call
+puts "Thanks for using Trending Stocks! Goodbye."
