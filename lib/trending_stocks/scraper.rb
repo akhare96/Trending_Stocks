@@ -52,6 +52,7 @@ class TrendingStocks::Scraper
         stock_details_hash[:sma200] = stock_site.css("td.snapshot-td2")[69].text
         stock_details_hash[:cur_volume] = stock_site.css("td.snapshot-td2")[70].text
         stock_details_hash[:cur_change] = stock_site.css("td.snapshot-td2")[71].text
+        stock_details_hash[:shortable] = stock_site.css("td.snapshot-td2")[60].text
         TrendingStocks::Stock_details.new(stock_details_hash)
     end
 
