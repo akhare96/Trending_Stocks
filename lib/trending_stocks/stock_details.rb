@@ -13,7 +13,7 @@ class TrendingStocks::Stock_details
     end
 
     def self.display_stock_details(user_stock)
-        puts "The stock you selected is #{user_stock.ticker.colorize(:blue)} - #{user_stock.full_name.colorize(:blue)}.\n\n"
+        puts "\nThe stock you selected is #{user_stock.ticker.colorize(:blue)} - #{user_stock.full_name.colorize(:blue)}.\n\n"
         puts "||  #{user_stock.details.sector.colorize(:blue)}  ||  #{user_stock.details.industry.colorize(:blue)}  ||  #{user_stock.details.country.colorize(:blue)}  ||\n\n"
         puts "Summary".colorize(:blue)
         puts "-------\n"
