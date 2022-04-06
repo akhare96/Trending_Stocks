@@ -25,15 +25,13 @@ class TrendingStocks::Stock_news
     end
 
     def self.display_stock_news(user_stock)
-        table = Terminal::Table.new {|t|
-            user_stock.news.each {|stock|
-                t << [stock.time, "#{stock.title}\n#{stock.url.colorize(:blue)}"]
-            }
-            t.style = {:all_separators => true}
-            t.title = "Latest 25 Headlines for #{user_stock.ticker}"
-            t.align_column(0, :right)
+        puts "\n"
+        puts "Here are the latest headlines for #{user_stock.ticker.colorize(:blue)}"
+        puts "\n\n"
+        user_stock.news.each {|stock|
+        puts "#{stock.time.colorize(:yellow)}\n----------------- \n#{stock.title}\n#{stock.url.colorize(:blue)}"
+        puts "\n\n"
         }
-        puts table
     end
 
 end
