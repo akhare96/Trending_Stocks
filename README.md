@@ -1,6 +1,7 @@
 # TrendingStocks
 
-This gem finds the current trending stocks and displays further details on a selected stock.
+This app scrapes a list of the current trending stocks on Reddit for the past 24 hours.  The user selects a stock and further details are displayed.  The user then has a choice to view news,
+ratings, or select a next stock.  The program keeps running until the user types "exit" at any point.
 
 ## Installation
 
@@ -20,7 +21,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run the executable file by typing the command below and follow the prompts.
+"./bin/trending_stocks"
 
 ## Development
 
