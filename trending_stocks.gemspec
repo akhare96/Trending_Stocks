@@ -8,18 +8,18 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ambar Khare"]
   spec.email         = ["ambar.khare24@gmail.com"]
 
-  spec.summary       = "Finds the 25 most talked about stocks on reddit and displays details on the selected stock"
-  spec.description   = "finder.com/reddit-stocks-to-buy keeps track of the most talked about stocks on twitter.  This gem scrapes that list at time of execution and proceeds to display the stocks.
+  spec.summary       = "Scrapes a list of the 25 most talked about stocks on reddit and displays details, analyst ratings, and news on the selected stock"
+  spec.description   = "finder.com/reddit-stocks-to-buy keeps track of the most talked about stocks on Reddit.  This app scrapes that list at time of execution and proceeds to display the stocks.
                         The user can select a stock to see more details along with analyst ratings and 20 lates news headlines."
-  #spec.homepage      = "www.bob.com"
+  #spec.homepage      = ""
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.4.0"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   #spec.metadata["homepage_uri"] = spec.homepage
-  #spec.metadata["source_code_uri"] = "www.bob.com"
-  #spec.metadata["changelog_uri"] = "www.bob.com"
+  #spec.metadata["source_code_uri"] = ""
+  #spec.metadata["changelog_uri"] = ""
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
